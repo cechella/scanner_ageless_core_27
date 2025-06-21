@@ -1,0 +1,73 @@
+name: scanner_ageless_core_27
+description: "A new Flutter project."
+
+# Esta linha impede a publicação acidental no pub.dev.
+publish_to: 'none' # Remova esta linha se quiser publicar o pacote.
+
+# Define a versão e número de build da aplicação.
+# Versão: MAJOR.MINOR.PATCH+BUILD
+version: 1.0.0+1
+
+# Define a versão do SDK do Dart necessária para rodar o projeto.
+environment:
+  sdk: ^3.8.1
+
+# Dependências que sua aplicação precisa para funcionar.
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Ícones estilo iOS
+  cupertino_icons: ^1.0.8
+
+  # Firebase Core - base da integração Firebase
+  firebase_core: ^2.30.0
+
+  # Firebase Auth - autenticação com email/senha
+  firebase_auth: ^4.17.5
+
+  # Firestore - banco de dados em tempo real do Firebase
+  cloud_firestore: ^4.15.3
+
+  # Armazenamento seguro para tokens e dados sensíveis
+  flutter_secure_storage: ^9.0.0
+
+  # Fontes Google como Orbitron, Audiowide etc
+  google_fonts: ^6.2.1
+
+# Dependências para desenvolvimento e testes
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # Regras de lint para código limpo e boas práticas
+  flutter_lints: ^5.0.0
+
+# Configurações específicas do Flutter
+flutter:
+
+  # Inclui a fonte padrão de ícones do Material Design
+  uses-material-design: true
+
+  # Declaração de imagens (assets) que serão usadas na aplicação
+  assets:
+    - assets/ageless_brain_glow.jpg
+    - assets/bust_glow.png
+    - assets/avatar_placeholder.jpg
+
+  # Para adicionar fontes customizadas ao projeto, descomente e edite abaixo:
+  #
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # Para mais detalhes sobre o uso de fontes de pacotes:
+  # https://flutter.dev/go/font-from-package
