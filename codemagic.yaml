@@ -1,0 +1,35 @@
+workflows:
+  ios-workflow:
+    name: Build iOS App
+    max_build_duration: 60
+    environment:
+      vars:
+        BUNDLE_ID: "com.ageless.scanner"  # <- você pode trocar se quiser outro bundle
+        APP_STORE_CONNECT_ISSUER_ID: $APP_STORE_CONNECT_ISS
+        APP_STORE_CONNECT_KEY_IDENTIFIER: $APP_STORE_CONNECT_KE
+        APP_STORE_CONNECT_PRIVATE_KEY: $APP_STORE_CONNECT_PRI
+      flutter: stable
+      xcode: latest
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: main
+          include: true
+          source: true
+    scripts:
+      - name: Flutter clean
+        script: flutter clean
+      - name: Install dependencies
+        script: flutter pub get
+      - name: Build iOS app
+        script: flutter build ipa --release --no-codesign
+    artifacts:
+      - build/ios/ipa/*.ipa
+    publishing:
+      app_store_connect:
+        auth:
+          issuer_id: $APP_STORE_CONNECT_ISS
+          key_identifier: $APP_STORE_CONNECT_KE
+          private_key: $APP_STORE_CONNECT_PRI
+        submit_to_testflight: true
