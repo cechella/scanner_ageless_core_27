@@ -4,7 +4,7 @@ workflows:
     max_build_duration: 60
     environment:
       vars:
-        BUNDLE_ID: "com.ageless.scanner"  # <- você pode trocar se quiser outro bundle
+        BUNDLE_ID: "com.ageless.scanner"
         APP_STORE_CONNECT_ISSUER_ID: $APP_STORE_CONNECT_ISS
         APP_STORE_CONNECT_KEY_IDENTIFIER: $APP_STORE_CONNECT_KE
         APP_STORE_CONNECT_PRIVATE_KEY: $APP_STORE_CONNECT_PRI
