@@ -24,8 +24,6 @@ workflows:
     artifacts:
       - build/ios/ipa/*.ipa
     publishing:
+      integration: app_store_ageless
       app_store_connect:
-        authentication: integration
-        integration: app_store_ageless
         submit_to_testflight: true
-
