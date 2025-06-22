@@ -3,6 +3,8 @@ workflows:
     name: Build iOS App
     max_build_duration: 60
     environment:
+      groups:
+        - ios-auth
       vars:
         BUNDLE_ID: "com.ageless.scanner"
       flutter: stable
@@ -25,5 +27,7 @@ workflows:
       - build/ios/ipa/*.ipa
     publishing:
       app_store_connect:
-        integration: app_store_ageless
+        issuer_id: $APP_STORE_CONNECT_ISS
+        key_identifier: $APP_STORE_CONNECT_KE
+        private_key: $APP_STORE_CONNECT_PRI
         submit_to_testflight: true
