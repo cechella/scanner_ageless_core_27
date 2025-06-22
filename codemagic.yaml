@@ -28,6 +28,6 @@ workflows:
     publishing:
       app_store_connect:
         issuer_id: $APP_STORE_CONNECT_ISS
-        key_identifier: $APP_STORE_CONNECT_KE
+        key_identifier: $APP_STORE_CONNECT_KEY
         private_key: $APP_STORE_CONNECT_PRI
         submit_to_testflight: true
